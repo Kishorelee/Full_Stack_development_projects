@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+</head>
+<body>
+    <h1>Count Down Starts</h1>
+    <div id="timer">
+        
+    </div>
+    <script >
+        const timer = document.getElementById("timer");
+        const CountDownDate = new Date("2023-10-01T23:59:59").getTime();
+       
+        
+        const CountDownInterval = setInterval(function(){
+            const now = new Date().getTime();
+            const timeLeft = CountDownDate -now;
+            if (timeLeft<=0)
+            {
+                clearInterval(countdownInterval);
+                timer.innerHTML = "Countdown expired!";
+            }
+            else{
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                timer.innerHTML = `<b>${days}d ${hours}h ${minutes}m ${seconds}s </b>`;
+            }
+            
+
+        },1000)
+        
+
+
+    </script>
+</body>
+</html>
