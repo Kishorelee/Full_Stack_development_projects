@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="rgp" type="text" placeholder="enter a number"><br>
+    <button id="btn">Submit</button> <br>
+    <h2>Random Generator Password</h2>
+    <p id="res"></p>
+
+
+
+
+
+    <script>
+        const RGP =document.getElementById("rgp");
+        const BTN =document.getElementById("btn");
+        const Result =document.getElementById("res");
+
+
+        BTN.addEventListener("click",RandomPassGen);
+        // random password
+        function RandomPassGen(){
+            const user_input =Number(RGP.value);
+            let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+            console.log(alphabet.length);
+                let RandomGenPass2 =" ";
+                for(var i =0;i<user_input;i++){
+                    let randomLetter = alphabet[Math.floor((Math.random()*alphabet.length))];
+                    RandomGenPass2 += randomLetter;
+                } 
+                console.log(`Random Pass Generator : ${RandomGenPass2} `);
+                Result.innerHTML =`Your password :<b>${RandomGenPass2}</b> `
+            
+        }
+        
+    </script>
+        
+
+    
+</body>
+</html>
