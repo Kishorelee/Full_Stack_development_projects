@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="/WeatherApp/assets/css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+    <div class="container">
+        <label for="city">Enter city name:</label>
+        <input type="text" id="city" placeholder="Enter a city">
+        <button id="getWeather">Get Weather</button>
+        <div id="weatherInfo">
+            <h2>Weather Information</h2>
+            <p>City: <span id="cityName"></span></p>
+            <p>Temperature: <span id="temperature"></span> &deg;C</p>
+            <p>Weather: <span id="weatherDescription"></span></p>
+        </div>
+    </div>
+    <script src="/WeatherApp/assets/js/WeatherApp.js"></script>
+</body>
+</html>
