@@ -71,7 +71,7 @@ const employees = [
   },
 ];
 
-const employeeNames =employees.map((item)=>({name:item.name,id:" ",role:" ",experience:" ",payout:" "}));
+const employeeNames =employees.map((item)=>({name:item.name,id:item.id,role:item.role,experience:item.experience,payout:item.payout}));
 const tableHeaders =Object.keys(employees[0]);
 console.log(tableHeaders);
 const tableHeadersRow = document.getElementById("table-headers");
@@ -82,11 +82,15 @@ tableHeaders.forEach((header) => {
 });
 const tableBody = document.getElementById("table-body");
 employeeNames.forEach((item) => {
+
   const row = document.createElement("tr");
   tableHeaders.forEach((header) => {
+    if(item.payout <35000 && item.payout >= 25000){
     const cell = document.createElement("td");
     cell.textContent = item[header];
+    console.log(item[header]);
     row.appendChild(cell);
+    }
   });
   tableBody.appendChild(row);
 });
